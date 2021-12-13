@@ -1,0 +1,62 @@
+p {
+    margin: 0;
+}
+
+.btn {
+    padding: 20px;
+}
+
+header {
+    padding: 0;
+
+    & .navigation {
+        display: flex;
+    }
+
+    
+
+}
+
+.cirle {
+    border-radius: 50%;
+    top: 0;
+}
+
+.mars {
+    @extend .cirle;
+    background-color: orange;
+}
+
+.sun {
+    @extend .cirle;
+    background-color: yellow;
+}
+
+@mixin circle2 {
+    border-radius: 50%;
+    top: 0;
+}
+
+.sun {
+    @include circle2;
+}
+
+@mixin customBorder($color) {
+    border: 1px solid $color;
+    border-radius: 50%;
+}
+
+.orbit {
+    @include circle2;
+
+    @include customBorder(yellow);
+}
+
+$main_color: black;
+$border: 1px solid black;
+
+.orbit {
+    border: $border;
+}
+
+@import './header.scss';
